@@ -33,20 +33,24 @@ int main() {
 
     srand(time(NULL));
 
-    // create a vector of n random integers
+    // Create a vector of n random integers.
     for (i = 0; i < n; i++) {
         A.push_back(rand() % 100);
     }
-    // print_vector(A);
+    print_vector(A);
 
     // (1) Selection Sort
     std::vector<int> B1(A.begin(), A.end());
     std::cout << "Selection Sort: " << runtime(B1, &selection_sort) << " ms\n";
 
-    // (2) Merge Sort
+    // (5) Merge Sort
     std::vector<int> B5(A.begin(), A.end());
     std::cout << "Merge Sort: " << runtime(B5, &merge_sort) << " ms\n";
-    // print_vector(B5);
+
+    // (6) Quicksort
+    std::vector<int> B6(A.begin(), A.end());
+    std::cout << "Quicksort: " << runtime(B6, &quick_sort) << " ms\n";
+    print_vector(B6);
 
     return 0;
 }
