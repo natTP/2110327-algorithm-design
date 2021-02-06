@@ -1,4 +1,3 @@
-#include <iostream>
 #include <vector>
 
 void merge(std::vector<int> &v, int start, int m, int stop,
