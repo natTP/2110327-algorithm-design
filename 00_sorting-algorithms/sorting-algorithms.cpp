@@ -1,0 +1,6 @@
+#include "heap-sort.cpp"
+#include "insertion-sort.cpp"
+#include "merge-sort.cpp"
+#include "quick-sort.cpp"
+#include "selection-sort.cpp"
+#include "shell-sort.cpp"
