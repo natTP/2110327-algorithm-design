@@ -3,10 +3,10 @@
 // Solves Max Subarray Sum by Kadane's Algorithm.
 // O(n)
 int kadane(int* a, int n) {
-    // Only keep the previous state.
     // Calculate max suffix (suf) and mss on the fly.
-    int suf = a[0];
-    int mss = a[0];
+    // Only keep the latest suf.
+    int suf = a[0];  // Local max
+    int mss = a[0];  // Global max
     for (int i = 1; i < n; i++) {
         suf = std::max(a[i], suf + a[i]);
         mss = std::max(mss, suf);
