@@ -1,24 +1,22 @@
 #include <bits/stdc++.h>
 
-using namespace std;
-
-int best(int* c, int end, bool b) {
-}  // ans from c[1..x], b tells whether c[x] is selected
-// best(c,x,true) = max(best(c,x-1,true), best(c,x-1,false) + c[x])
-// best(c,x,false) = max(best(c,x-1,true), best(c,x-1,false))
-
-// best(c,1,true) = c[1]
-// best(c,1,false) = 0
-
-// try bottom up
-
 int main() {
     int n, i;
-    int c[n];
     scanf("%d", &n);
+    int c[n];
     for (i = 0; i < n; i++) {
         scanf("%d", &c[i]);
     }
-
+    // best is the answer from c[0...i-1]
+    // when c[i] is not selected (0) or selected (1).
+    int best[n][2];
+    best[0][0] = 0;
+    best[0][1] = c[0];
+    for (i = 1; i < n; i++) {
+        best[i][0] = std::max(best[i - 1][1], best[i - 1][0]);
+        best[i][1] = best[i - 1][0] + c[i];
+        // c[i] selected: can only NOT select c[i-1]
+    }
+    printf("%d", std::max(best[n - 1][0], best[n - 1][1]));
     return 0;
 }
