@@ -1,3 +1,1 @@
-    for (auto it = a.begin(); it != a.end(); it++) {
-        printf("%d %d\n", it->first, it->second);
-    }
+            divide[i][j] = k * divide[i - 1][j] + divide[i - 1][j - 1];
